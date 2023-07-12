@@ -19,14 +19,23 @@ rational: 유리수 패키지
 - pop: stack pop
 - peek: stack 맨 위의 값 가져오기(pop 없이)
 3. calculator 만듬
+  
 -: func (cal *Calculator) getdata(num number)
+
 //num을 계산기의 stack에 추가(형과 구현이 분리되어 있어 가능)
+
 -: func (cal *Calculator) Answer()
+
 //해당 계산기에서 계산한 값을 출력
+
 -: func (cal *Calculator) getop(op string)
+
 // op가 들어오면 2개를 스택에서 pop하여 두 정밀도를 비교함
+
 // 이후 한 쪽의 정밀도가 다른 한쪽보다 크다면 작은 쪽의 형을 큰 쪽의 형으로 동적으로 변환함
+
 ex) if a.Getprecision() > b.Getprecision() {b = a.Convert(b)}}
+
 4. number인터페이스의 구현을 통해 각 type 구조체 연결(duck typing)
 
 사고의 흐름:
