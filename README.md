@@ -2,10 +2,15 @@
 비 파괴적 확장이 가능한 interface기반 calculator
 
 구성요소:(src파일에 들어있음)
+
 calculator: 계산기 패키지(number, integer, float, stack, calculator 포함)
+
 calculator_expandable: main 패키지
+
 ncomplex: 복소수 패키지
+
 rational: 유리수 패키지
+
 
 간략 리포트:
 1. interface Number를 만듬(number.go참조)
@@ -69,24 +74,42 @@ ex) 새로 만드는 파일(Rational.go , Ncomplex.go) 에서 1000을 가지는 
 하는 느낌을 주는 함수임. 
 
 참고: to_integer, to_float, intmul(다 number에 있는 함수들)
+
 func (stype Rational) To_integer() Number {
+
 	return stype.Nt.Div(stype.Dnt).To_integer()
+ 
 }
+
 func (stype Rational) To_float() Number {
+
 	return stype.Nt.To_float().Div(stype.Dnt.To_float())
+ 
 }
+
 func (stype Rational) Intmul(n int) Number {
+
 	stype.Nt = stype.Nt.Intmul(n)
+ 
 	return stype
+ 
 }
 
 사용방법:
+
 입력 순서: RNF
+
 입력 형식: cal.getdata(구조체 생성자(value))
+
 integer 입력: cal.Getdata(NewInteger(2))
+
 Float 입력: cal.Getdata(NewFloat(2.1))
+
 Rational 입력: NewRational(NewInteger(1), NewInteger(2))
+
 complex 입력: NewNcomplex(NewFloat(2.0), NewFloat(2.0))
+
 op 입력: cal.Getop("*")
+
 식이 알맞게 입력 되었다면 계산값 출력
 식에 op가 남거나 부족 하다면 error출력
