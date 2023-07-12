@@ -1,5 +1,5 @@
 # go_oop_calculator
-비 파괴적 확장이 가능한 interface기반 calculator
+새로운 type(유리수, 복소수 같은)에 대해 비 파괴적 확장이 가능한 interface기반 calculator
 
 구성요소:(src파일에 들어있음)
 
