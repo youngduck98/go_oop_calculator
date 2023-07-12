@@ -85,23 +85,16 @@ ex) 새로 만드는 파일(Rational.go , Ncomplex.go) 에서 1000을 가지는 
 참고: to_integer, to_float, intmul(다 number에 있는 함수들)
 
 func (stype Rational) To_integer() Number {
-
 	return stype.Nt.Div(stype.Dnt).To_integer()
- 
 }
 
 func (stype Rational) To_float() Number {
-
 	return stype.Nt.To_float().Div(stype.Dnt.To_float())
- 
 }
 
 func (stype Rational) Intmul(n int) Number {
-
 	stype.Nt = stype.Nt.Intmul(n)
- 
 	return stype
- 
 }
 
 사용방법:
